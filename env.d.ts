@@ -21,6 +21,10 @@ declare global {
     CUSTOM_COLLECTION_BANNER_METAFIELD: string;
     METAOBJECT_COLORS_TYPE: string;
     KLAVIYO_PRIVATE_API_TOKEN: string;
+    INSTAGRAM_ACCOUNT_ID: string;
+    INSTAGRAM_ACCESS_TOKEN: string;
+    // Enables automatic Instagram token rotation via a shop metafield.
+    PRIVATE_ADMIN_API_TOKEN: string;
     PUBLIC_SHOPIFY_INBOX_SHOP_ID: string;
     WEAVERSE_HOST?: string;
   }

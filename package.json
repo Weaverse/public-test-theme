@@ -28,6 +28,12 @@
   "scripts": {
     "build": "shopify hydrogen build --codegen",
     "build:icons": "node ./other/build-icons.mjs",
+    "cf-typegen": "wrangler types && react-router typegen",
+    "cf-build": "CF_WORKERS=true react-router build",
+    "cf-preview": "CF_WORKERS=true vite preview",
+    "cf-dev": "wrangler dev --port 8787",
+    "check": "tsc --noEmit && npm run cf-build && wrangler deploy --dry-run",
+    "deploy": "npm run cf-build && wrangler deploy",
     "predev": "node ./other/build-icons.mjs",
     "add-icon": "node ./other/add-icon.mjs",
     "dev": "react-router typegen && shopify hydrogen dev --codegen --port 3456",
@@ -92,6 +98,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.5",
+    "@cloudflare/vite-plugin": "^1.51.2",
     "@playwright/test": "1.62.0",
     "@shopify/cli": "^4.5.2",
     "@shopify/hydrogen-codegen": "0.3.3",
@@ -104,7 +111,8 @@
     "@weaverse/biome": "5.8.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
-    "vite": "^8.1.5"
+    "vite": "^8.1.5",
+    "wrangler": "^4.120.1"
   },
   "engines": {
     "node": ">=22.12.0"

@@ -2,6 +2,7 @@
 export type IconName =
   | "arrow-left"
   | "arrow-right"
+  | "arrow-square-out"
   | "arrows-out-simple"
   | "caret-double-left"
   | "caret-double-right"
@@ -56,6 +57,7 @@ export type IconName =
   | "sliders"
   | "smiley-duotone"
   | "smiley"
+  | "squares-four"
   | "star-duotone"
   | "star-fill"
   | "star-half-fill"

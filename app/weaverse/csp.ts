@@ -13,6 +13,8 @@ export function getWeaverseCsp(
   if (weaverseHost) {
     weaverseHosts.push(weaverseHost);
   }
+  // Instagram media is served from Meta's CDN, not from graph.instagram.com.
+  const instagramHosts = ["*.cdninstagram.com", "*.fbcdn.net"];
   const updatedCsp: {
     [x: string]: string[] | string | boolean;
   } = {
@@ -28,6 +30,23 @@ export function getWeaverseCsp(
       "cdn.jsdelivr.net",
       "*.alicdn.com",
       ...weaverseHosts,
+    ],
+    imgSrc: [
+      "'self'",
+      "data:",
+      "blob:",
+      "cdn.shopify.com",
+      ...instagramHosts,
+      ...weaverseHosts,
+    ],
+    // Needed for Instagram video playback — without an explicit `media-src`,
+    // <video> falls back to `default-src` and the MP4 is blocked.
+    mediaSrc: [
+      "'self'",
+      "data:",
+      "blob:",
+      "cdn.shopify.com",
+      ...instagramHosts,
     ],
     connectSrc: [
       "vimeo.com",

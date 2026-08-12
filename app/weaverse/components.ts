@@ -32,6 +32,8 @@ import * as ImageGalleryItems from "~/sections/image-gallery/items";
 import * as ImageWithText from "~/sections/image-with-text";
 import * as ImageWithTextContent from "~/sections/image-with-text/content";
 import * as ImageWithTextImage from "~/sections/image-with-text/image";
+import * as InstagramFeed from "~/sections/instagram-feed";
+import * as InstagramFeedCarousel from "~/sections/instagram-feed/carousel";
 import * as JudgemeReview from "~/sections/judgeme-reviews";
 import * as JudgemeReviewList from "~/sections/judgeme-reviews/review-list";
 import * as JudgemeReviewSummary from "~/sections/judgeme-reviews/review-summary";
@@ -127,6 +129,8 @@ export const components: HydrogenComponent[] = [
   ImageGallery,
   ImageGalleryItems,
   ImageGalleryItem,
+  InstagramFeed,
+  InstagramFeedCarousel,
   MainProduct,
   ProductMediaSection,
   ProductInfoSection,

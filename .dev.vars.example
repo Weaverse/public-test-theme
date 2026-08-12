@@ -1,0 +1,20 @@
+# Cloudflare Workers environment variables.
+# Copy to `.dev.vars` (git-ignored) and fill in real values.
+# Upload to the deployed Worker with: npx wrangler secret bulk .dev.vars
+
+NODE_ENV=production
+SESSION_SECRET=your-secure-session-secret
+PUBLIC_STORE_DOMAIN=your-shopify-store.myshopify.com
+PUBLIC_STOREFRONT_API_TOKEN=your-shopify-storefront-api-token
+PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID=your-customer-account-api-client-id
+SHOP_ID=your-shop-id
+WEAVERSE_PROJECT_ID=your-weaverse-project-id
+WEAVERSE_HOST=https://studio.weaverse.io
+
+# Optional — declared in env.d.ts, used by this theme's integrations.
+PUBLIC_GOOGLE_GTM_ID=
+JUDGEME_PRIVATE_API_TOKEN=
+CUSTOM_COLLECTION_BANNER_METAFIELD=
+METAOBJECT_COLORS_TYPE=
+KLAVIYO_PRIVATE_API_TOKEN=
+PUBLIC_SHOPIFY_INBOX_SHOP_ID=

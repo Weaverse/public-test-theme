@@ -1,3 +1,4 @@
+import { cloudflare } from "@cloudflare/vite-plugin";
 import { reactRouter } from "@react-router/dev/vite";
 import { hydrogen } from "@shopify/hydrogen/vite";
 import { oxygen } from "@shopify/mini-oxygen/vite";
@@ -5,6 +6,13 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "node:url";
 import type { Plugin } from "vite";
 import { defineConfig } from "vite";
+
+// Cloudflare Workers target, selected by `npm run cf-build` (CF_WORKERS=true).
+// The Cloudflare plugin compiles for `workerd` and replaces Oxygen's dev/preview
+// runtime, so the two plugins are mutually exclusive — keeping this behind a flag
+// leaves the default Oxygen workflow (`npm run dev` / `npm run build`) untouched.
+// react-router.config.ts reads the same flag to enable the Vite Environment API.
+const isCloudflare = process.env.CF_WORKERS === "true";
 // Client-only heavy modules replaced with a stub in the SSR build. The
 // worker bundle inlines all dynamic imports, so React.lazy alone cannot
 // keep them out of the server file — react-player's media stack (hls.js,
@@ -28,7 +36,7 @@ function ssrStubClientOnlyModules(): Plugin {
 export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     hydrogen(),
-    oxygen(),
+    isCloudflare ? cloudflare({ viteEnvironment: { name: "ssr" } }) : oxygen(),
     reactRouter(),
     tailwindcss(),
     ssrStubClientOnlyModules(),
