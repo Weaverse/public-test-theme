@@ -76,7 +76,6 @@ export function ZoomModal({
     }
   }
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation> --- IGNORE ---
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "ArrowRight" || event.key === "ArrowDown") {
@@ -270,8 +269,7 @@ function isVisibleInParent(child: HTMLElement, parent: HTMLElement) {
   );
 }
 
-export interface ZoomButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface ZoomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export function ZoomButton({ className, ...props }: ZoomButtonProps) {
   return (

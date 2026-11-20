@@ -9,8 +9,7 @@ interface InstagramFeedData {
 }
 
 interface InstagramFeedProps
-  extends SectionProps<Awaited<ReturnType<typeof loader>>>,
-    InstagramFeedData {
+  extends SectionProps<Awaited<ReturnType<typeof loader>>>, InstagramFeedData {
   ref?: React.Ref<HTMLElement>;
 }
 

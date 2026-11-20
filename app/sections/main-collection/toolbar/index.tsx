@@ -89,8 +89,7 @@ interface CollectionToolbarData {
 }
 
 interface CollectionToolbarProps
-  extends HydrogenComponentProps,
-    CollectionToolbarData {}
+  extends HydrogenComponentProps, CollectionToolbarData {}
 
 function CollectionToolbar(props: CollectionToolbarProps) {
   const {

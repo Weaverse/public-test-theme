@@ -61,7 +61,7 @@ export function MediaGrid({
   const [zoomMediaId, setZoomMediaId] = useState<string | null>(null);
   const [zoomModalOpen, setZoomModalOpen] = useState(false);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: reset expanded state on variant change
+  // reset expanded state on variant change.
   useEffect(() => {
     setExpanded(false);
   }, [selectedVariant]);

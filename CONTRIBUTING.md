@@ -1,5 +1,10 @@
 # Contributing to Pilot
 
+## Static checks
+
+Run `npm run check` before committing. Use `npm run check:fix` for formatting and safe
+lint fixes, or `npm run format` and `npm run format:check` for formatting only.
+
 ## Versioning Convention
 
 Pilot uses **datetime-based versioning**: `YYYY.M.D`

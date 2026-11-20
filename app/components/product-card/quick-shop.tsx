@@ -189,11 +189,11 @@ export function QuickShopTrigger({
   const [open, setOpen] = useState(false);
   const { load, data } = useFetcher<{ product: ProductQuery["product"] }>();
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: open and state are intentionally excluded
   useEffect(() => {
     if (open && !data) {
       load(`/api/product/${productHandle}`);
     }
+    // oxlint-disable-next-line react/exhaustive-deps -- open and state are intentionally excluded
   }, [open]);
 
   return (

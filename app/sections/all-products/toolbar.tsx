@@ -19,8 +19,7 @@ interface AllProductsToolbarData {
 }
 
 interface AllProductsToolbarProps
-  extends HydrogenComponentProps,
-    AllProductsToolbarData {}
+  extends HydrogenComponentProps, AllProductsToolbarData {}
 
 function AllProductsToolbar(props: AllProductsToolbarProps) {
   const { enableSort, showBreadcrumb, showProductsCount, ...rest } = props;

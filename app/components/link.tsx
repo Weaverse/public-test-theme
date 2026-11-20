@@ -71,14 +71,13 @@ export interface LinkStyles {
 }
 
 export interface LinkData
-  extends RemixLinkProps,
-    Partial<LinkStyles>,
-    VariantProps<typeof variants> {
+  extends RemixLinkProps, Partial<LinkStyles>, VariantProps<typeof variants> {
   text?: string;
 }
 
 export interface LinkProps
-  extends HTMLAttributes<HTMLAnchorElement>,
+  extends
+    HTMLAttributes<HTMLAnchorElement>,
     Partial<Omit<HydrogenComponentProps, "children">>,
     LinkData {
   animate?: boolean;

@@ -17,8 +17,7 @@ interface AllProductsGridData {
 }
 
 interface AllProductsGridProps
-  extends HydrogenComponentProps,
-    AllProductsGridData {}
+  extends HydrogenComponentProps, AllProductsGridData {}
 
 function AllProductsGrid(props: AllProductsGridProps) {
   const {
