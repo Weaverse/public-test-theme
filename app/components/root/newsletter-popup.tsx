@@ -69,7 +69,7 @@ export function NewsletterPopup() {
     }
   }, [fetcher.data]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: just need to run once
+  // just need to run once.
   useEffect(() => {
     if (isDesignMode) {
       return;

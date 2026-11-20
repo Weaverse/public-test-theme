@@ -43,7 +43,7 @@ export function useCountrySelector() {
   });
 
   const observerRef = useRef(null);
-  // biome-ignore lint/correctness/useExhaustiveDependencies: ref callback from useInView
+  // ref callback from useInView.
   useEffect(() => {
     ref(observerRef.current);
   }, [ref, observerRef]);

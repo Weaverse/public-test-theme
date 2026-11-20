@@ -16,7 +16,7 @@ export function PredictiveSearchButton() {
   const location = useLocation();
   const params = useParams();
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: close the dialog when the location changes, aka when the user navigates to a search result page
+  // close the dialog when the location changes, aka when the user navigates to a search result page.
   useEffect(() => {
     setOpen(false);
   }, [location]);

@@ -44,7 +44,6 @@ export function MediaSlider({
   const [zoomMediaId, setZoomMediaId] = useState<string | null>(null);
   const [zoomModalOpen, setZoomModalOpen] = useState(false);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: change the slide when selectedVariant changes
   useEffect(() => {
     if (!swiper) {
       return;
@@ -67,6 +66,7 @@ export function MediaSlider({
         }
       }
     }
+    // oxlint-disable-next-line react/exhaustive-deps -- change the slide when selectedVariant changes
   }, [selectedVariant]);
 
   const shouldShowButton =

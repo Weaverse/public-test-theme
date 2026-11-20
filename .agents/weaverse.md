@@ -129,7 +129,7 @@ When adding a section:
 Before finishing any Weaverse change:
 
 - [ ] `npm run typecheck`
-- [ ] `npm run biome`
+- [ ] `npm run check`
 - [ ] `npm run weaverse:manifest` (and commit the result)
 - [ ] `npm run weaverse:audit`
 - [ ] New credential-bearing settings marked `sensitive: true`

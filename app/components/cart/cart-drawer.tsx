@@ -32,7 +32,7 @@ export function CartDrawer() {
   } = useCartStore();
   const location = useLocation();
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: close on route change
+  // close on route change.
   useEffect(() => {
     closeCartDrawer();
   }, [location.pathname, closeCartDrawer]);
